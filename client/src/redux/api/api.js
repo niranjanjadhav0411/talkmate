@@ -132,15 +132,15 @@ const api = createApi({
       invalidatesTags: ["Chat"],
     }),
 
-    // addGroupMembers: builder.mutation({
-    //   query: ({ members, chatId }) => ({
-    //     url: `chat/addmembers`,
-    //     method: "PUT",
-    //     credentials: "include",
-    //     body: { members, chatId },
-    //   }),
-    //   invalidatesTags: ["Chat"],
-    // }),
+    addGroupMembers: builder.mutation({
+      query: ({ members, chatId }) => ({
+        url: `chat/addmembers`,
+        method: "PUT",
+        credentials: "include",
+        body: { members, chatId },
+      }),
+      invalidatesTags: ["Chat"],
+    }),
 
     deleteChat: builder.mutation({
       query: (chatId) => ({
